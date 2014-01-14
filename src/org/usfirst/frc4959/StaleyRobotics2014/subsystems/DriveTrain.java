@@ -34,7 +34,7 @@ public class DriveTrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void takeJoystickInputs(Joystick left, Joystick right)
+    public void takeJoystickInputs(double left, double right)
     {
         robotDrive.tankDrive(left, right);
     }
