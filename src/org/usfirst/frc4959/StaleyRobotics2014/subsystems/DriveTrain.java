@@ -41,8 +41,8 @@ public class DriveTrain extends Subsystem
 
     public void falconDrive(double left, double right)
         {
-            double leftPower = rampSpeed(left, sensitivity / 10);
-            double rightPower = rampSpeed(left, sensitivity / 10);
+            double leftPower = changeSpeed(left, sensitivity / 10);
+            double rightPower = changeSpeed(left, sensitivity / 10);
             robotDrive.tankDrive(leftPower, rightPower);
         }
 
@@ -74,9 +74,10 @@ public class DriveTrain extends Subsystem
             
         }
 
-    public static double rampSpeed(double input, double sensitivity)
+    public static double changeSpeed(double input, double sensitivity)
         {
         //formula for ramping: f(x) = ax^3 + (1-a)x where a is the sensitivity and x is the input
-        return (sensitivity * input * input * input + (1 - sensitivity) * input);
+        //return (sensitivity * input * input * input + (1 - sensitivity) * input);
+        return (sensitivity * input);
         }
     }
