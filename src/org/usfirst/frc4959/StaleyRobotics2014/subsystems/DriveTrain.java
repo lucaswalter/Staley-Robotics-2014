@@ -42,7 +42,7 @@ public class DriveTrain extends Subsystem
     public void falconDrive(double left, double right)
         {
             double leftPower = changeSpeed(left, sensitivity / 10);
-            double rightPower = changeSpeed(left, sensitivity / 10);
+            double rightPower = changeSpeed(right, sensitivity / 10);
             robotDrive.tankDrive(leftPower, rightPower);
         }
 
