@@ -50,6 +50,7 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
     
     public Joystick XboxController;
+    
     private JoystickButton increaseSensitivity;
     private JoystickButton decreaseSensitivity;
    
@@ -60,6 +61,7 @@ public class OI {
         //Sensitivity
         increaseSensitivity = new JoystickButton(XboxController, RobotMap.START_BUTTON);
         increaseSensitivity.whenPressed(new IncreaseSensitivity());
+        
         decreaseSensitivity = new JoystickButton(XboxController, RobotMap.SELECT_BUTTON);
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
             

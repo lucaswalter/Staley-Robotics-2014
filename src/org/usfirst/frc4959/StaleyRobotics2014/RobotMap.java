@@ -19,6 +19,7 @@ public class RobotMap
     
     //Joystick Default Variables
     public static final int DEFAULT_SENSITIVITY = 8;
+    
     public static final int START_BUTTON = 8;
     public static final int SELECT_BUTTON = 7;
 
