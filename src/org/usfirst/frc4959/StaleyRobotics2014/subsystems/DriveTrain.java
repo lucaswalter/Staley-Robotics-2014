@@ -15,17 +15,16 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * Lucas Walter, what a hack
  */
 public class DriveTrain extends Subsystem
     {
-        private double sensitivity = 1.0;
-    
-        SpeedController rightVictor = RobotMap.driveTrainRightVictor;
-        SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
-        RobotDrive robotDrive = RobotMap.robotDriveTrain;
-          
 
+    SpeedController rightVictor = RobotMap.driveTrainRightVictor;
+    SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
+    RobotDrive robotDrive = RobotMap.robotDriveTrain;
+
+    private int sensitivityLevel = 1;
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -41,14 +40,14 @@ public class DriveTrain extends Subsystem
 
     public void falconDrive(double left, double right)
         {
-            double leftPower = changeSpeed(left, sensitivity);
-            double rightPower = changeSpeed(right, sensitivity);
-            robotDrive.tankDrive(leftPower, rightPower);
+        double leftPower = changeSpeed(left, sensitivity(sensitivityLevel));
+        double rightPower = changeSpeed(right, sensitivity(sensitivityLevel));
+        robotDrive.tankDrive(leftPower, rightPower);
         }
 
     public void takeJoystickInputs(double left, double right)
         {
-            falconDrive(left, right);
+        falconDrive(left, right);
         }
 
     public void stop()
@@ -58,27 +57,59 @@ public class DriveTrain extends Subsystem
 
     public void decreaseSensitivity()
         {
-            if(sensitivity == 1.0)
+        if (sensitivityLevel > 1)
             {
-                sensitivity = 0.5;
-                System.out.println(sensitivity);
-            }  
-            
+            sensitivityLevel--;
+            System.out.println(sensitivityLevel);
+            }
+
         }
 
     public void increaseSensitivity()
         {
-            if(sensitivity == 0.5)
+        if (sensitivityLevel < 5)
             {
+            sensitivityLevel++;
+            System.out.println(sensitivityLevel);
+            }
+        }
+
+    /*This method returns the sensitivity to the drive train depending on the sensitivityLevel
+    **This method brought to you by Ian Eugene Collins and from contributions from viewers like you.
+    */
+    public double sensitivity(int sensitivityLevel)
+        {
+
+        double sensitivity;
+
+        switch (sensitivityLevel)
+            {
+
+            case 1:
+                sensitivity = 0.6;
+                break;
+            case 2:
+                sensitivity = 0.7;
+                break;
+            case 3:
+                sensitivity = 0.8;
+                break;
+            case 4:
+                sensitivity = 0.9;
+                break;
+            case 5:
                 sensitivity = 1.0;
-                System.out.println(sensitivity);
-            }  
-            
+                break;
+            default:
+                sensitivity = 1.0;
+                break;
+            }
+        return (sensitivity);
         }
 
     public static double changeSpeed(double input, double sensitivity)
         {
-            System.out.println(input);
-            return (sensitivity * input);
+        System.out.println(input);
+        return (sensitivity * input);
         }
     }

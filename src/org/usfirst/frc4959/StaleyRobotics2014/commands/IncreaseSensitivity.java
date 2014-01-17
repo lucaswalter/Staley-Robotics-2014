@@ -4,8 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- *
- * @author Team Up Next
+ *Lucas Walter has donkey brains.     
  */
 public class IncreaseSensitivity extends Command
     {
