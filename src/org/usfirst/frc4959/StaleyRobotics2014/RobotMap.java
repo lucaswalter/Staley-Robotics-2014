@@ -18,7 +18,7 @@ public class RobotMap
     public static RobotDrive robotDriveTrain;
     
     //Joystick Default Variables
-    public static final int DEFAULT_SENSITIVITY = 8;
+    public static int DEFAULT_SENSITIVITY = 8;
     
     public static final int START_BUTTON = 8;
     public static final int SELECT_BUTTON = 7;
@@ -33,6 +33,8 @@ public class RobotMap
 
         robotDriveTrain = new RobotDrive(driveTrainLeftVictor, driveTrainRightVictor);
 
+        robotDriveTrain.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        robotDriveTrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);      
         robotDriveTrain.setSafetyEnabled(true);
         robotDriveTrain.setExpiration(0.1);
         robotDriveTrain.setSensitivity(0.5);

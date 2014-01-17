@@ -72,9 +72,9 @@ public class OI {
     
     //Methods
     public double getRightJoystick() {
-        return XboxController.getRawAxis(5);
+        return XboxController.getRawAxis(2);
     }
     public double getLeftJoystick() {
-        return XboxController.getRawAxis(2);
+        return XboxController.getRawAxis(5);
     }
 }
