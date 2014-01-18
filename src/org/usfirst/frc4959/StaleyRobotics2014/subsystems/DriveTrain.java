@@ -24,7 +24,8 @@ public class DriveTrain extends Subsystem
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
 
-    private int sensitivityLevel = 1;
+    //Has the sensitivity set to highest when it starts up.
+    private int sensitivityLevel = 5;
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -60,7 +61,6 @@ public class DriveTrain extends Subsystem
         if (sensitivityLevel > 1)
             {
             sensitivityLevel--;
-            System.out.println(sensitivityLevel);
             }
 
         }
@@ -70,12 +70,12 @@ public class DriveTrain extends Subsystem
         if (sensitivityLevel < 5)
             {
             sensitivityLevel++;
-            System.out.println(sensitivityLevel);
             }
         }
 
     /*This method returns the sensitivity to the drive train depending on the sensitivityLevel
-    **This method brought to you by Ian Eugene Collins and from contributions from viewers like you.
+    **This method brought to you by Ian Eugene Collins and from contributions from viewers like you
+    **Thank You!
     */
     public double sensitivity(int sensitivityLevel)
         {
@@ -104,12 +104,12 @@ public class DriveTrain extends Subsystem
                 sensitivity = 1.0;
                 break;
             }
+        System.out.println(sensitivityLevel);
         return (sensitivity);
         }
 
     public static double changeSpeed(double input, double sensitivity)
         {
-        System.out.println(input);
         return (sensitivity * input);
         }
     }
