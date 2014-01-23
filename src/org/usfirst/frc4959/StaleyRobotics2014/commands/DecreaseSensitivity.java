@@ -3,10 +3,6 @@ package org.usfirst.frc4959.StaleyRobotics2014.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
-/**
- *
- * @author Team Up Next
- */
 public class DecreaseSensitivity extends Command
     {
 
@@ -14,7 +10,6 @@ public class DecreaseSensitivity extends Command
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        //requires(Robot.driveTrain);
         }
 
     // Called just before this Command runs the first time
