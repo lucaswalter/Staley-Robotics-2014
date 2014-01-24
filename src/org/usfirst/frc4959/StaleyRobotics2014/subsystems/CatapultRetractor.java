@@ -5,13 +5,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Lucas Wyland
+ * @authors Lucas and Ian
  */
 public class CatapultRetractor extends Subsystem
     {
 
     private Relay catapultSpike = RobotMap.CatapultSpike;
-    private boolean bRetracting = false;
+    private boolean bStop = false;
+    private boolean bForward = true;
 
     public void initDefaultCommand()
         {
@@ -22,23 +23,35 @@ public class CatapultRetractor extends Subsystem
     public void retract()
         {
         catapultSpike.set(Relay.Value.kReverse);
-        bRetracting = true;
+        bStop = true;
         }
 
     public void stop()
         {
         catapultSpike.set(Relay.Value.kOff);
-        bRetracting = false;
+        bStop = false;
         }
-
+    
     public void toggle()
         {
-        if (bRetracting == true) {
+        if (bStop == true)
+            {
             catapultSpike.set(Relay.Value.kOff);
-            bRetracting = false;
-        } else {
-            catapultSpike.set(Relay.Value.kReverse);
-            bRetracting = true;
-        }
+            bStop = false;
+            }
+        else
+            {
+            if (bForward == true)
+                {
+                catapultSpike.set(Relay.Value.kForward);
+                bForward = false;
+                }
+            else
+                {
+                catapultSpike.set(Relay.Value.kReverse);
+                bForward = true;
+                }
+            bStop = false;
+            }
         }
     }
