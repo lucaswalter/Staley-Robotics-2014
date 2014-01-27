@@ -6,10 +6,10 @@ import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 /**
  * @author Lucas wyland
  */
-public class RetractCatapult extends Command
+public class StartRetractCatapult extends Command
     {
 
-    public RetractCatapult()
+    public StartRetractCatapult()
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
