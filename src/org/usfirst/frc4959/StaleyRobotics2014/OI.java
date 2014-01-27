@@ -72,4 +72,8 @@ public class OI
         {
         return XboxController.getRawAxis(5);
         }
+    public double getTriggers()
+        {
+        return XboxController.getRawAxis(3);
+        }
     }

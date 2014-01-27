@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Lucas Wyland
+ * Lucas Wyland
  */
 public class CatapultRetractor extends Subsystem
     {

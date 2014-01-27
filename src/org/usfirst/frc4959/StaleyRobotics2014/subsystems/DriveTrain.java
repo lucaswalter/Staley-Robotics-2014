@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Lucas Walter, what a hack
+ * Lucas Wyland
  */
 public class DriveTrain extends Subsystem
     {
@@ -14,7 +14,6 @@ public class DriveTrain extends Subsystem
     SpeedController rightVictor = RobotMap.driveTrainRightVictor;
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
-    
     // Has the sensitivity set to highest when it starts up.
     private int sensitivityLevel = 5;
 
@@ -58,12 +57,9 @@ public class DriveTrain extends Subsystem
         if (sensitivityLevel < 5) {
             sensitivityLevel++;
         }
+        
         }
-
-    /**
-     * This method brought to you by Ian Eugene Collins and from contributions from viewers like you
-     * Thank You!
-     */
+    
     public double sensitivity(int sensitivityLevel)
         {
 

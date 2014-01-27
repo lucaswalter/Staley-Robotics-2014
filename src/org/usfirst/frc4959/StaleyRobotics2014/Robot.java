@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot
     public static OI oi;
     public static DriveTrain driveTrain;
     public static CatapultRetractor retractor;
+    public static Loader loader;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -32,6 +33,7 @@ public class Robot extends IterativeRobot
 
         driveTrain = new DriveTrain();
         retractor = new CatapultRetractor();
+        loader = new Loader();
 
 
         // This MUST be here. If the OI creates Commands (which it very likely

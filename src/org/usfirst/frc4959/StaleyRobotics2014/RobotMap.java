@@ -16,6 +16,7 @@ public class RobotMap
     public static RobotDrive robotDriveTrain;
     public static SpeedController driveTrainRightVictor;
     public static SpeedController driveTrainLeftVictor;
+    public static SpeedController loaderVictor;
     public static Relay CatapultSpike;
     
     //Xbox Controller Bindings
@@ -28,6 +29,7 @@ public class RobotMap
 
         driveTrainRightVictor = new Victor(1, 1);
         driveTrainLeftVictor = new Victor(1, 2);
+        loaderVictor = new Victor(1, 3);
         CatapultSpike = new Relay(1);
 
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
@@ -35,8 +37,6 @@ public class RobotMap
 
         robotDriveTrain = new RobotDrive(driveTrainLeftVictor, driveTrainRightVictor);
 
-        //robotDriveTrain.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        //robotDriveTrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         robotDriveTrain.setSafetyEnabled(true);
         robotDriveTrain.setExpiration(0.1);
         robotDriveTrain.setSensitivity(0.5);
