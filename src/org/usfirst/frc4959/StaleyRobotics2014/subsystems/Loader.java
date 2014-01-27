@@ -3,6 +3,7 @@ package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
+import org.usfirst.frc4959.StaleyRobotics2014.Commands.MoveLoader;
 
 /**
  * @author Ian
