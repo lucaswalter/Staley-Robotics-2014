@@ -41,6 +41,7 @@ public class OI
     private JoystickButton increaseSensitivity;
     private JoystickButton decreaseSensitivity;
     private JoystickButton toggleCatapultRetractor;
+    private JoystickButton fireCatapult;
 
     public OI()
         {
@@ -54,7 +55,10 @@ public class OI
         decreaseSensitivity = new JoystickButton(XboxController, RobotMap.LEFT_BUMPER);
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
 
-        toggleCatapultRetractor = new JoystickButton(XboxController, RobotMap.A_BUTTON);
+        fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
+        fireCatapult.whenPressed(new FireCatapult());
+        
+        toggleCatapultRetractor = new JoystickButton(XboxController, RobotMap.B_BUTTON);
         toggleCatapultRetractor.whenPressed(new ToggleRetractCatapult());
 
         // SmartDashboard Buttons
