@@ -1,15 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- *
- * @author LW029415
+ * @author Ian
  */
 public class MoveLoader extends Command
     {
