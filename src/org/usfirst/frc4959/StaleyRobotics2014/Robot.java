@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot
     public static OI oi;
     public static DriveTrain driveTrain;
     public static CatapultRetractor retractor;
+    public static Shooter shooter;
 
     /**
      * This function is run when the robot is first started up and should be
