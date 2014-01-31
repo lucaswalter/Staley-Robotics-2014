@@ -42,9 +42,10 @@ public class OI
     private JoystickButton decreaseSensitivity;
     private JoystickButton toggleCatapultRetractor;
     private JoystickButton fireCatapult;
+    private JoystickButton reloadCatapult;
 
     public OI()
-        {
+    {
 
         XboxController = new Joystick(1);
 
@@ -58,13 +59,17 @@ public class OI
         fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
         fireCatapult.whenPressed(new FireCatapult());
         
+        reloadCatapult = new JoystickButton(XboxController, RobotMap.Y_BUTTON);
+        reloadCatapult.whenPressed(new ReloadCatapult());
+        
+        
         toggleCatapultRetractor = new JoystickButton(XboxController, RobotMap.B_BUTTON);
         toggleCatapultRetractor.whenPressed(new ToggleRetractCatapult());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Drive with Joysticks", new DriveWithJoysticks());
-        }
+    }
 
     //Methods for the axes of XBOX controller
     public double getRightJoystick()
