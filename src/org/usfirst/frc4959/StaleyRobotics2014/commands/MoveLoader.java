@@ -4,8 +4,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- * @author Ian
+ * @author Ian & Lucas Wyland
  */
+
 public class MoveLoader extends Command
     {
     

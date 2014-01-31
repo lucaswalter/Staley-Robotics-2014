@@ -4,17 +4,15 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- * @author Lucas wyland
+ * @author Lucas Wyland
  */
 
-public class ToggleRetractCatapult extends Command
-    {
-
-    public ToggleRetractCatapult()
+public class ReloadCatapult extends Command{
+    
+    public ReloadCatapult()
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        //requires(Robot.driveTrain);
         }
 
     // Called just before this Command runs the first time
@@ -25,7 +23,7 @@ public class ToggleRetractCatapult extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.retractor.toggle();
+        Robot.shooter.reload();
         }
 
     // Make this return true when this Command no longer needs to run execute()

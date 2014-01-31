@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- *
- * @author Dustin and Saul
+ * @author Dustin and Saul and Lucas Wyland
  */
+
 public class FireCatapult extends Command{
     
     public FireCatapult()

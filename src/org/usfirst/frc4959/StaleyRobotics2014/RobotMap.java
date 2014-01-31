@@ -18,8 +18,10 @@ public class RobotMap
     public static SpeedController driveTrainLeftVictor;
     public static SpeedController loaderVictor;
     public static Relay CatapultSpike;
+    public static Relay FiringSpike;
     
     //Xbox Controller Bindings
+    //TODO: Rework controller bindings
     public static final int A_BUTTON = 1;
     public static final int B_BUTTON = 2;
     public static final int LEFT_BUMPER = 5;
@@ -33,7 +35,8 @@ public class RobotMap
         driveTrainLeftVictor = new Victor(1, 2);
         loaderVictor = new Victor(1, 3);
         CatapultSpike = new Relay(1);
-
+        FiringSpike = new Relay(2);
+        
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);
 

@@ -9,9 +9,9 @@ package org.usfirst.frc4959.StaleyRobotics2014.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
  * @author Dustin, AutoBrett, and Saul
  */
+
 public class SensorMove extends Command {
     public SensorMove() {
 

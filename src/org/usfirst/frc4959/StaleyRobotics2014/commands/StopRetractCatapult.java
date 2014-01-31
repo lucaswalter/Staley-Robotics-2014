@@ -6,6 +6,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 /**
  * @author Lucas wyland
  */
+
 public class StopRetractCatapult extends Command
     {
 
