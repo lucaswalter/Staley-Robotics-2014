@@ -85,4 +85,8 @@ public class OI
         {
         return XboxController.getRawAxis(3);
         }
+    public double getDPad()
+        {
+        return XboxController.getRawAxis(6);
+        }
     }
