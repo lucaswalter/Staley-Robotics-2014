@@ -1,17 +1,23 @@
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
+import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Ian, Dustin, & Saul
+ * @author Lucas Wyland, Ian, Dustin, & Saul
  */
-public class RunCompressor
+public class RunCompressor extends Command
     {
-
+    
+    Relay compressorSpike = RobotMap.compressorSpike;
+    DigitalInput pressureSwitch = RobotMap.pressureSwitch;
+    
     public RunCompressor()
         {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.shooter);
         }
 
     // Called just before this Command runs the first time
@@ -22,10 +28,11 @@ public class RunCompressor
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.shooter.Compressor();
+        compressorSpike.set(Relay.Value.kOn);
+        System.out.println(pressureSwitch.get());
         }
 
-    // Make this return true when this Command no longer needs to run execute()
+    // Make this return true when this Commrand no longer needs to run execute()
     protected boolean isFinished()
         {
         return false;
@@ -40,5 +47,6 @@ public class RunCompressor
     // subsystems is scheduled to run
     protected void interrupted()
         {
+        compressorSpike.set(Relay.Value.kOff);
         }
     }
