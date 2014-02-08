@@ -61,6 +61,9 @@ public class OI
         
         reloadCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
         reloadCatapult.whenPressed(new PrimeCatapult());
+        
+        reloadCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
+        reloadCatapult.whenPressed(new StartRetractCatapult());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

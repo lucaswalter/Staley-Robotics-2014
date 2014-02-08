@@ -25,9 +25,9 @@ public class RobotMap
     public static SpeedController CatapultVictor;
     public static Relay SolenoidSpike;
     public static Compressor CompressorSpike;
+    public static DigitalInput limitSwitch;
     
     //Xbox Controller Bindings
-    //TODO: Rework controller bindings
     public static final int A_BUTTON = 1;
     public static final int B_BUTTON = 2;
     public static final int X_BUTTON = 3;
@@ -49,6 +49,7 @@ public class RobotMap
         CatapultVictor = new Victor(1, 4);
         SolenoidSpike = new Relay(1);
         CompressorSpike = new Compressor(1,2);
+        limitSwitch = new DigitalInput (2);
         
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);
