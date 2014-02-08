@@ -1,8 +1,9 @@
 package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.StartRetractCatapult;
 
 /**
  * Lucas Wyland
@@ -10,36 +11,22 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 public class CatapultRetractor extends Subsystem
     {
 
-    private Relay catapultSpike = RobotMap.CatapultSpike;
-    private boolean bRetracting = false;
+    private SpeedController catapultVictor = RobotMap.CatapultVictor;
 
     public void initDefaultCommand()
         {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new StartRetractCatapult());
         }
 
-    public void retract()
+    public void retract(double input)
         {
-        catapultSpike.set(Relay.Value.kReverse);
-        bRetracting = true;
+        catapultVictor.set(Math.abs(input));
         }
 
     public void stop()
         {
-        catapultSpike.set(Relay.Value.kOff);
-        bRetracting = false;
+        catapultVictor.set(0);
         }
 
-    //TODO: Add clean rework for retracting system
-    public void toggle()
-        {
-        if (bRetracting == true) {
-            catapultSpike.set(Relay.Value.kOff);
-            bRetracting = false;
-        } else {
-            catapultSpike.set(Relay.Value.kReverse);
-            bRetracting = true;
-        }
-        }
     }
