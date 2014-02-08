@@ -10,6 +10,11 @@ import java.util.Vector;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
+/**
+ * @author Cameron
+ */
+
 public class RobotMap
     {
 
@@ -17,8 +22,9 @@ public class RobotMap
     public static SpeedController driveTrainRightVictor;
     public static SpeedController driveTrainLeftVictor;
     public static SpeedController loaderVictor;
-    public static Relay CatapultSpike;
-    public static Relay FiringSpike;
+    public static SpeedController CatapultVictor;
+    public static Relay SolenoidSpike;
+    public static Compressor CompressorSpike;
     
     //Xbox Controller Bindings
     //TODO: Rework controller bindings
@@ -40,8 +46,9 @@ public class RobotMap
         driveTrainRightVictor = new Victor(1, 1);
         driveTrainLeftVictor = new Victor(1, 2);
         loaderVictor = new Victor(1, 3);
-        CatapultSpike = new Relay(1);
-        FiringSpike = new Relay(2);
+        CatapultVictor = new Victor(1, 4);
+        SolenoidSpike = new Relay(1);
+        CompressorSpike = new Compressor(1,2);
         
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);

@@ -37,10 +37,10 @@ public class OI
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    
     public Joystick XboxController;
     private JoystickButton increaseSensitivity;
     private JoystickButton decreaseSensitivity;
-    private JoystickButton toggleCatapultRetractor;
     private JoystickButton fireCatapult;
     private JoystickButton reloadCatapult;
 
@@ -59,12 +59,8 @@ public class OI
         fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
         fireCatapult.whenPressed(new FireCatapult());
         
-        reloadCatapult = new JoystickButton(XboxController, RobotMap.Y_BUTTON);
-        reloadCatapult.whenPressed(new ReloadCatapult());
-        
-        
-        toggleCatapultRetractor = new JoystickButton(XboxController, RobotMap.B_BUTTON);
-        toggleCatapultRetractor.whenPressed(new ToggleRetractCatapult());
+        reloadCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
+        reloadCatapult.whenPressed(new PrimeCatapult());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

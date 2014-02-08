@@ -14,7 +14,7 @@ public class StartRetractCatapult extends Command
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        //requires(Robot.driveTrain);
+        requires(Robot.retractor);
         }
 
     // Called just before this Command runs the first time
@@ -25,13 +25,13 @@ public class StartRetractCatapult extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.retractor.retract();
+        Robot.retractor.retract(Robot.oi.getDPad());
         }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-        return true;
+        return false;
         }
 
     // Called once after isFinished returns true

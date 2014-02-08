@@ -5,7 +5,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 
 /*
- * @author Lucas Wyland
+ * @author Lucas Wyland and Cameron Hensel
  */
 
 public class DriveWithJoysticks extends Command
