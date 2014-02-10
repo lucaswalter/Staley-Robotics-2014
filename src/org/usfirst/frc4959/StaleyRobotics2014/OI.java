@@ -42,10 +42,8 @@ public class OI
     private JoystickButton increaseSensitivity;
     private JoystickButton decreaseSensitivity;
     private JoystickButton fireCatapult;
-    private JoystickButton reloadCatapult;
-    
-    private JoystickButton compressorOn;
-    private JoystickButton compressorOff;
+    private JoystickButton primeCatapult;
+    private JoystickButton retractCatapult;
 
     public OI()
     {
@@ -62,16 +60,12 @@ public class OI
         fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
         fireCatapult.whenPressed(new FireCatapult());
         
-        reloadCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
-        reloadCatapult.whenPressed(new PrimeCatapult());
+        primeCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
+        primeCatapult.whenPressed(new PrimeCatapult());
         
-        compressorOn = new JoystickButton(XboxController, RobotMap.B_BUTTON);
-        compressorOn.whenPressed(new RunCompressor());
+        retractCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
+        retractCatapult.whenPressed(new RetractCatapult());
         
-        compressorOff = new JoystickButton(XboxController, RobotMap.Y_BUTTON);
-        compressorOff.whenPressed(new StopCompressor());
-        
-
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Drive with Joysticks", new DriveWithJoysticks());

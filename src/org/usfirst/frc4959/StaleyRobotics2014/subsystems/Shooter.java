@@ -3,7 +3,7 @@ package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 /**
  * @author Saul, Dustin, and Ian
  */
-import edu.wpi.first.wpilibj.Compressor;
+
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;

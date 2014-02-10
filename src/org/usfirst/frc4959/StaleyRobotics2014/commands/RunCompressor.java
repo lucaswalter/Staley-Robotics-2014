@@ -14,7 +14,6 @@ public class RunCompressor extends Command
     
     Relay compressorSpike = RobotMap.compressorSpike;
     DigitalInput pressureSwitch = RobotMap.pressureSwitch;
-    DigitalInput limitSwitch = RobotMap.limitSwitch;
     
     public RunCompressor()
         {

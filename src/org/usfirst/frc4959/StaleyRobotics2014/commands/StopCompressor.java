@@ -11,7 +11,8 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 public class StopCompressor extends Command
     {
     
-    Relay spikeRelayTest = RobotMap.compressorSpike;
+    Relay compressorSpike = RobotMap.compressorSpike;
+    
     public StopCompressor()
         {
         // Use requires() here to declare subsystem dependencies
@@ -21,14 +22,12 @@ public class StopCompressor extends Command
     // Called just before this Command runs the first time
     protected void initialize()
         {
-        //Robot.airCompressor.start();
-        //spikeRelayTest.set(Relay.Value.kOff);
         }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        spikeRelayTest.set(Relay.Value.kOff);
+        compressorSpike.set(Relay.Value.kOff);
         }
 
     // Make this return true when this Commrand no longer needs to run execute()
@@ -46,6 +45,5 @@ public class StopCompressor extends Command
     // subsystems is scheduled to run
     protected void interrupted()
         {
-        //spikeRelayTest.set(Relay.Value.kOn);
         }
     }
