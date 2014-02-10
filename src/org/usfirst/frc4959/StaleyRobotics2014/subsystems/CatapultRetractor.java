@@ -4,11 +4,11 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
 
 /**
- * Lucas Wyland, Dustin, and Ian
+ * Lucas Wyland, Ian Collins, & Dustin
  */
+
 public class CatapultRetractor extends Subsystem
     {
 
@@ -17,7 +17,6 @@ public class CatapultRetractor extends Subsystem
 
     public void initDefaultCommand()
         {
-        // Set the default command for a subsystem here.
         }
 
     public void retract()

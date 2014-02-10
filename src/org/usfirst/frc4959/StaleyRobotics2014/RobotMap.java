@@ -2,7 +2,6 @@ package org.usfirst.frc4959.StaleyRobotics2014;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import java.util.Vector;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -12,13 +11,14 @@ import java.util.Vector;
  */
 
 /**
- * @author Cameron
+ * @author Cameron Hensel
  */
 
 public class RobotMap
     {
 
     public static RobotDrive robotDriveTrain;
+    
     public static SpeedController driveTrainRightVictor;
     public static SpeedController driveTrainLeftVictor;
     public static SpeedController loaderVictor;

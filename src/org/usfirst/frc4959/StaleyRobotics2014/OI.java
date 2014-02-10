@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot
  */
+
 public class OI
     {
     //// CREATING BUTTONS
@@ -81,10 +82,12 @@ public class OI
         {
         return XboxController.getRawAxis(5);
         }
+    
     public double getTriggers()
         {
         return XboxController.getRawAxis(3);
         }
+    
     public double getDPad()
         {
         return XboxController.getRawAxis(6);

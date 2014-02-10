@@ -6,6 +6,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 /**
  * Lucas Wyland
  */
+
 public class IncreaseSensitivity extends Command
     {
 

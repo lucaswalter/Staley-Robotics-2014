@@ -6,19 +6,18 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Lucas Wyland
+ * Lucas Wyland & Ian Collins
  */
+
 public class DriveTrain extends Subsystem
     {
 
     SpeedController rightVictor = RobotMap.driveTrainRightVictor;
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
-    // Has the sensitivity set to highest when it starts up.
+    
     private int sensitivityLevel = 5;
 
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
     public void initDefaultCommand()
         {
         // Set the default command for a subsystem here.
@@ -54,15 +53,16 @@ public class DriveTrain extends Subsystem
 
     public void increaseSensitivity()
         {
-        if (sensitivityLevel < 5) {
-            sensitivityLevel++;
-        }
         
+        if (sensitivityLevel < 5)
+            {
+            sensitivityLevel++;
+            }
         }
     
     public double sensitivity(int sensitivityLevel)
         {
-
+        
         double sensitivity;
 
         switch (sensitivityLevel) {

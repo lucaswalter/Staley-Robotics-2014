@@ -8,6 +8,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 /**
  * @author Lucas Wyland, Ian, Dustin, & Saul
  */
+
 public class StopCompressor extends Command
     {
     

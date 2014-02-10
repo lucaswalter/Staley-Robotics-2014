@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- * @author Ian & Lucas Wyland
+ * @author Ian Collins & Lucas Wyland
  */
 
 public class MoveLoader extends Command
@@ -12,9 +12,12 @@ public class MoveLoader extends Command
     
     public MoveLoader()
         {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
         requires(Robot.loader);
         }
     
+    // Called Just before this Command runs for the first time
     protected void initialize()
         {
         }
@@ -40,6 +43,5 @@ public class MoveLoader extends Command
     // subsystems is scheduled to run
     protected void interrupted()
         {
-        end();
         }
     }

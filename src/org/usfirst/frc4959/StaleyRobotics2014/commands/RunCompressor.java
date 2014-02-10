@@ -7,8 +7,9 @@ import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Lucas Wyland, Ian, Dustin, & Saul
+ * @author Lucas Wyland, Ian Collins, Dustin, & Saul
  */
+
 public class RunCompressor extends Command
     {
     
@@ -47,13 +48,11 @@ public class RunCompressor extends Command
     // Called once after isFinished returns true
     protected void end()
         {
-        //compressorSpike.set(Relay.Value.kOff);
         }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted()
         {
-        //compressorSpike.set(Relay.Value.kOff);
         }
     }
