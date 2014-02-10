@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- * @author Lucas wyland & Ian Collins
+ * @author Lucas Wyland & Ian Collins
  */
 
 public class StartRetractCatapult extends Command
@@ -25,13 +25,14 @@ public class StartRetractCatapult extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.retractor.retract();
+        Robot.retractor.retract(Robot.oi.getDPad());
         }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-        return Robot.retractor.CheckRetractorSwitch();
+//        return Robot.retractor.CheckRetractorSwitch();
+        return false;
         }
 
     // Called once after isFinished returns true

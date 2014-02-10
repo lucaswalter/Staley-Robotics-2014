@@ -23,9 +23,16 @@ public class RobotMap
     public static SpeedController driveTrainLeftVictor;
     public static SpeedController loaderVictor;
     public static SpeedController CatapultVictor;
+    
     public static Relay SolenoidSpike;
+    public static Relay compressorSpike;
+    
     public static Compressor CompressorSpike;
+    
+    public static DigitalInput pressureSwitch;
     public static DigitalInput limitSwitch;
+    
+    
     
     //Xbox Controller Bindings
     public static final int A_BUTTON = 1;
@@ -46,20 +53,22 @@ public class RobotMap
         driveTrainRightVictor = new Victor(1, 1);
         driveTrainLeftVictor = new Victor(1, 2);
         loaderVictor = new Victor(1, 3);
-        CatapultVictor = new Victor(1, 4);
-        SolenoidSpike = new Relay(1);
-        CompressorSpike = new Compressor(1,2);
-        limitSwitch = new DigitalInput (2);
+        CatapultVictor = new Victor(1, 4);  
         
+        SolenoidSpike = new Relay(1);
+        compressorSpike = new Relay(2);
+        
+        limitSwitch = new DigitalInput(2);
+        pressureSwitch = new DigitalInput(3);
+                   
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);
 
         robotDriveTrain = new RobotDrive(driveTrainLeftVictor, driveTrainRightVictor);
 
-        robotDriveTrain.setSafetyEnabled(true);
+        robotDriveTrain.setSafetyEnabled(false);
         robotDriveTrain.setExpiration(0.1);
         robotDriveTrain.setSensitivity(0.5);
         robotDriveTrain.setMaxOutput(1.0);
-
         }
     }

@@ -23,8 +23,9 @@ public class Robot extends IterativeRobot
     public static CatapultRetractor retractor;
     public static Loader loader;
     public static Shooter shooter;
-
-    /**
+    public static AirCompressor airCompressor;
+    
+    /*
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
@@ -36,7 +37,7 @@ public class Robot extends IterativeRobot
         retractor = new CatapultRetractor();
         loader = new Loader();
         shooter = new Shooter();
-
+        //airCompressor = new AirCompressor();
 
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from

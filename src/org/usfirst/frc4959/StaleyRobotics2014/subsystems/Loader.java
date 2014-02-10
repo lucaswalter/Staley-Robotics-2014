@@ -24,9 +24,9 @@ public class Loader extends Subsystem
     public void moveLoader(double input)
         {
             if (input < 0) {
-                loaderVictor.set(-0.3);
+                loaderVictor.set(-0.4);
             } else if (input > 0) {
-                loaderVictor.set(0.3);
+                loaderVictor.set(0.4);
             } else {
                 loaderVictor.set(0.0);
             }    

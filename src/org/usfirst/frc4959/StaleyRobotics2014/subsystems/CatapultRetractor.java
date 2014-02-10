@@ -21,9 +21,9 @@ public class CatapultRetractor extends Subsystem
         setDefaultCommand(new StartRetractCatapult());
         }
 
-    public void retract()
+    public void retract(double input)
         {
-        catapultVictor.set(0.7);
+        catapultVictor.set(Math.abs(input * 0.3));
         }
 
     public void stop()

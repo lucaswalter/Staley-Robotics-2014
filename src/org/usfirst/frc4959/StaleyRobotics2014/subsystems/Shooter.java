@@ -7,17 +7,17 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.RunCompressor;
 
 public class Shooter extends Subsystem
     {
 
     private Relay solenoidSpike = RobotMap.SolenoidSpike;
-    private Compressor compressorSpike = RobotMap.CompressorSpike;
 
     public void initDefaultCommand()
         {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new RunCompressor());
         }
 
     public void fire()
@@ -28,10 +28,5 @@ public class Shooter extends Subsystem
     public void reload()
         {
         solenoidSpike.set(Relay.Value.kOff);
-        }
-
-    public void Compressor()
-        {
-        compressorSpike.start();
         }
     }
