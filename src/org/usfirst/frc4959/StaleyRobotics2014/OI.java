@@ -70,7 +70,6 @@ public class OI
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new Autonomous());
         SmartDashboard.putData("Drive with Joysticks", new DriveWithJoysticks());
-        SmartDashboard.putData("Ian's Secret", new IansSecret());
     }
 
     //Methods for the axes of XBOX controller
