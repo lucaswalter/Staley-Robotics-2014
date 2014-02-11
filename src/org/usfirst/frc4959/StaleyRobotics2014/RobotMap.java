@@ -29,10 +29,11 @@ public class RobotMap
     
     public static Compressor CompressorSpike;
     
-    public static DigitalInput pressureSwitch;
+    public static Gyro gyro;
+    public static AnalogChannel ultrasonic;
+    
     public static DigitalInput limitSwitch;
-    
-    
+    public static DigitalInput pressureSwitch;
     
     //Xbox Controller Bindings
     public static final int A_BUTTON = 1;
@@ -58,8 +59,13 @@ public class RobotMap
         SolenoidSpike = new Relay(1);
         compressorSpike = new Relay(2);
         
+        gyro = new Gyro(1);
+        ultrasonic = new AnalogChannel(2);
+        
         limitSwitch = new DigitalInput(2);
         pressureSwitch = new DigitalInput(3);
+        
+
                    
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);

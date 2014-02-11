@@ -68,8 +68,9 @@ public class OI
         retractCatapult.whenPressed(new RetractCatapult());
         
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+        SmartDashboard.putData("Autonomous Command", new Autonomous());
         SmartDashboard.putData("Drive with Joysticks", new DriveWithJoysticks());
+        SmartDashboard.putData("Ian's Secret", new IansSecret());
     }
 
     //Methods for the axes of XBOX controller
