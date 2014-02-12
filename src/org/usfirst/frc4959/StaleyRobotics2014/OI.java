@@ -1,9 +1,14 @@
 package org.usfirst.frc4959.StaleyRobotics2014;
 
-import org.usfirst.frc4959.StaleyRobotics2014.commands.*;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.Autonomous;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.DecreaseSensitivity;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.DriveWithJoysticks;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapultSequence;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.IncreaseSensitivity;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -59,10 +64,7 @@ public class OI
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
 
         fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
-        fireCatapult.whenPressed(new FireCatapult());
-        
-        primeCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
-        primeCatapult.whenPressed(new PrimeCatapult());
+        fireCatapult.whenPressed(new FireCatapultSequence());
         
         retractCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
         retractCatapult.whenPressed(new RetractCatapult());

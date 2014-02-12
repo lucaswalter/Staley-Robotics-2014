@@ -8,6 +8,6 @@ public class Autonomous extends CommandGroup
     public Autonomous()
         {
         addSequential(new AutoMove());
-        addSequential(new FireCatapult());      
+        addSequential(new FireCatapultSequence());      
         }
 }
