@@ -25,10 +25,12 @@ public class Loader extends Subsystem
     //A negative value is returned by the right trigger and a positive by the right
     public void moveLoader(double input)
         {
+            //Raise Arm
             if (input < 0) {
-                loaderVictor.set(input * 0.5);
+                loaderVictor.set(-0.5);
+            //Lower Arm    
             } else if (input > 0) {
-                loaderVictor.set(0.1);
+                loaderVictor.set(0.2);
             } else {
                 loaderVictor.set(0.0);
             }    

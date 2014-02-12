@@ -6,8 +6,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.Autonomous;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.DecreaseSensitivity;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.DriveWithJoysticks;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapultSequence;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.IncreaseSensitivity;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.PrimeCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
 
 /**
@@ -63,8 +64,15 @@ public class OI
         decreaseSensitivity = new JoystickButton(XboxController, RobotMap.LEFT_BUMPER);
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
 
+        //fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
+        //.whenPressed(new FireCatapultSequence());
+        
+        //Prime and reload work backwards
         fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
-        fireCatapult.whenPressed(new FireCatapultSequence());
+        fireCatapult.whenPressed(new PrimeCatapult());
+        
+        primeCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
+        primeCatapult.whenPressed(new FireCatapult());
         
         retractCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
         retractCatapult.whenPressed(new RetractCatapult());

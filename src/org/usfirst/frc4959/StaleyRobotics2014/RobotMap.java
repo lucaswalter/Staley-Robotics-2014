@@ -1,6 +1,13 @@
 package org.usfirst.frc4959.StaleyRobotics2014;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Gyro;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
@@ -51,8 +58,8 @@ public class RobotMap
     public static void init()
         {
 
-        driveTrainRightVictor = new Victor(1, 1);
-        driveTrainLeftVictor = new Victor(1, 2);
+        driveTrainRightVictor = new Victor(1, 2);
+        driveTrainLeftVictor = new Victor(1, 1);
         loaderVictor = new Victor(1, 3);
         CatapultVictor = new Victor(1, 4);  
         
@@ -62,11 +69,9 @@ public class RobotMap
         gyro = new Gyro(1);
         ultrasonic = new AnalogChannel(2);
         
-        limitSwitch = new DigitalInput(2);
-        pressureSwitch = new DigitalInput(3);
-        
-
-                   
+        limitSwitch = new DigitalInput(1);
+        pressureSwitch = new DigitalInput(2);
+                
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);
 
