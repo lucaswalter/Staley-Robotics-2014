@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /*
- * @author Lucas Wyland and Cameron Hensel
+ * @author Lucas Wyland
  */
 
 public class DriveWithJoysticks extends Command
@@ -25,7 +25,7 @@ public class DriveWithJoysticks extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.driveTrain.takeJoystickInputs(Robot.oi.getLeftJoystick(), Robot.oi.getRightJoystick());
+        Robot.driveTrain.falconDrive(Robot.oi.getLeftJoystickYAxis(), Robot.oi.getRightJoystick_XAxis());
         }
 
     // Make this return true when this Command no longer needs to run execute()

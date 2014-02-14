@@ -12,7 +12,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.RunCompressor;
 public class Shooter extends Subsystem
     {
 
-    private Relay solenoidSpike = RobotMap.SolenoidSpike;
+    Relay solenoidSpike = RobotMap.SolenoidSpike;
 
     public void initDefaultCommand()
         {

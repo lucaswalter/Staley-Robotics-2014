@@ -17,9 +17,6 @@ public class AutoMove extends Command
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
     AnalogChannel ultrasonic = RobotMap.ultrasonic;
     
-    double range;
-    double Kp = 0.03;
-    
     public AutoMove()
         {
         // Use requires() here to declare subsystem dependencies
@@ -38,15 +35,14 @@ public class AutoMove extends Command
 
         double angle = gyro.getAngle();
         
-        robotDrive.arcadeDrive(0.5, -angle * Kp);
+        robotDrive.arcadeDrive(1, -angle * 0.03);
         }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
         // 4.9 mV/cm
-        double voltage = ultrasonic.getVoltage();
-        range = voltage / 0.049;
+        double range = ultrasonic.getVoltage() / 0.049;
         
         System.out.println(range + " cm");
 

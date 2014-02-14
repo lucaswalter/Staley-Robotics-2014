@@ -4,8 +4,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.*;
-import org.usfirst.frc4959.StaleyRobotics2014.subsystems.*;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.Autonomous;
+import org.usfirst.frc4959.StaleyRobotics2014.subsystems.CatapultRetractor;
+import org.usfirst.frc4959.StaleyRobotics2014.subsystems.DriveTrain;
+import org.usfirst.frc4959.StaleyRobotics2014.subsystems.Loader;
+import org.usfirst.frc4959.StaleyRobotics2014.subsystems.Shooter;
 
 /**
  * The VM is configured to automatically run this class, and to call the

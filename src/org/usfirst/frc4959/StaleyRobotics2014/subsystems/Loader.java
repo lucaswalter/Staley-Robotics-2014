@@ -8,7 +8,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.MoveLoader;
 /**
  * @author Ian Collins
  */
-
+    
 public class Loader extends Subsystem
     {
 
@@ -27,7 +27,7 @@ public class Loader extends Subsystem
         {
             //Raise Arm
             if (input < 0) {
-                loaderVictor.set(-0.5);
+                loaderVictor.set(-0.19);
             //Lower Arm    
             } else if (input > 0) {
                 loaderVictor.set(0.2);

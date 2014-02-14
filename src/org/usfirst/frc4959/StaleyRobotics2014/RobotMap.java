@@ -53,13 +53,16 @@ public class RobotMap
     public static final int START_BUTTON = 8;
     public static final int LEFT_STICK_PRESS = 9;
     public static final int RIGHT_STICK_PRESS = 10;
+    public static final int XBOX_BUTTON = 11;
+    
+    public static boolean retractorSafety;
     
 
     public static void init()
         {
 
-        driveTrainRightVictor = new Victor(1, 2);
         driveTrainLeftVictor = new Victor(1, 1);
+        driveTrainRightVictor = new Victor(1, 2);
         loaderVictor = new Victor(1, 3);
         CatapultVictor = new Victor(1, 4);  
         

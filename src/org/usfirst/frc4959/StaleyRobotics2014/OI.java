@@ -35,22 +35,22 @@ public class OI
     //// TRIGGERING COMMANDS WITH BUTTONS
     // Once you have a button, it's trivial to bind it to a button in one of
     // three ways:
-    // Start the command when the button is pressed and let it run the command
+    /// Start the command when the button is pressed and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenPressed(new ExampleCommand());
-    // Run the command while the button is being held down and interrupt it once
+    /// Run the command while the button is being held down and interrupt it once
     // the button is released.
     // button.whileHeld(new ExampleCommand());
-    // Start the command when the button is released  and let it run the command
+    /// Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     
     public Joystick XboxController;
-    private JoystickButton increaseSensitivity;
-    private JoystickButton decreaseSensitivity;
-    private JoystickButton fireCatapult;
-    private JoystickButton primeCatapult;
-    private JoystickButton retractCatapult;
+    private final JoystickButton increaseSensitivity;
+    private final JoystickButton decreaseSensitivity;
+    private final JoystickButton fireCatapult;
+    private final JoystickButton primeCatapult;
+    private final JoystickButton retractCatapult;
 
     public OI()
     {
@@ -64,17 +64,17 @@ public class OI
         decreaseSensitivity = new JoystickButton(XboxController, RobotMap.LEFT_BUMPER);
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
 
+        //We will eventually replace the seperate priming and firing commands
         //fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
-        //.whenPressed(new FireCatapultSequence());
+        //fireCatapult.whenPressed(new FireCatapultSequence());
         
-        //Prime and reload work backwards
-        fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
+        fireCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
         fireCatapult.whenPressed(new PrimeCatapult());
         
-        primeCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
+        primeCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
         primeCatapult.whenPressed(new FireCatapult());
         
-        retractCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
+        retractCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
         retractCatapult.whenPressed(new RetractCatapult());
         
         // SmartDashboard Buttons
@@ -83,23 +83,38 @@ public class OI
     }
 
     //Methods for the axes of XBOX controller
-    public double getRightJoystick()
+    public double getLeftJoystick_XAxis()
+        {
+        return XboxController.getRawAxis(1);
+        }
+    
+    public double getLeftJoystickYAxis()
         {
         return XboxController.getRawAxis(2);
         }
 
-    public double getLeftJoystick()
-        {
-        return XboxController.getRawAxis(5);
-        }
-    
     public double getTriggers()
         {
         return XboxController.getRawAxis(3);
         }
     
-    public double getDPad()
+    public double getRightJoystick_XAxis()
+        {
+        return XboxController.getRawAxis(4);
+        }
+    
+    public double getRightJoystick_YAxis()
+        {
+        return XboxController.getRawAxis(5);
+        }
+    
+    public double getDPad_XAxis()
         {
         return XboxController.getRawAxis(6);
+        }
+    
+    public double getDPad_YAxis()
+        {
+        return XboxController.getRawAxis(7);
         }
     }

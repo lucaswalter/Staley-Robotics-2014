@@ -1,9 +1,11 @@
 package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 
-import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.*;
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.Gyro;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.DriveWithJoysticks;
 
 /**
  * Lucas Wyland & Ian Collins
@@ -15,6 +17,7 @@ public class DriveTrain extends Subsystem
     SpeedController rightVictor = RobotMap.driveTrainRightVictor;
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
+    Gyro gyro = RobotMap.gyro;
     
     private int sensitivityLevel = 5;
 
@@ -23,21 +26,16 @@ public class DriveTrain extends Subsystem
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new DriveWithJoysticks());
-
         }
 
     public void falconDrive(double left, double right)
         {
-        double leftPower = changeSpeed(left, sensitivity(sensitivityLevel));
-        double rightPower = changeSpeed(right, sensitivity(sensitivityLevel));
-        robotDrive.tankDrive(leftPower, rightPower);
+        double forwardSpeed = changeSpeed(left, sensitivity(sensitivityLevel));
+        double rotateSpeed = changeSpeed(right, sensitivity(sensitivityLevel));
+        
+        robotDrive.arcadeDrive(forwardSpeed, rotateSpeed);
         }
-
-    public void takeJoystickInputs(double left, double right)
-        {
-        falconDrive(left, right);
-        }
-
+    
     public void stop()
         {
         robotDrive.drive(0, 0);
@@ -45,15 +43,14 @@ public class DriveTrain extends Subsystem
 
     public void decreaseSensitivity()
         {
-        if (sensitivityLevel > 1) {
+        if (sensitivityLevel > 1) 
+            {
             sensitivityLevel--;
-        }
-
+            }
         }
 
     public void increaseSensitivity()
         {
-        
         if (sensitivityLevel < 5)
             {
             sensitivityLevel++;
