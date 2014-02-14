@@ -30,10 +30,10 @@ public class DriveTrain extends Subsystem
 
     public void falconDrive(double left, double right)
         {
-        double forwardSpeed = changeSpeed(left, sensitivity(sensitivityLevel));
-        double rotateSpeed = changeSpeed(right, sensitivity(sensitivityLevel));
+        double moveValue = changeSpeed(left, sensitivity(sensitivityLevel));
+        double rotationValue = gyroRotationAdjustment(right);
         
-        robotDrive.arcadeDrive(forwardSpeed, rotateSpeed);
+        robotDrive.arcadeDrive(moveValue, rotationValue);
         }
     
     public void stop()
@@ -46,6 +46,16 @@ public class DriveTrain extends Subsystem
         if (sensitivityLevel > 1) 
             {
             sensitivityLevel--;
+            }
+        }
+    
+    public double gyroRotationAdjustment(double right)
+        {
+        if (right < 0.15 || right > -0.15)
+            {
+            return gyro.getAngle() * -0.03;
+            } else {
+            return right; 
             }
         }
 
