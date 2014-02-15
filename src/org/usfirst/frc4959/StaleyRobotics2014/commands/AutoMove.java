@@ -46,7 +46,7 @@ public class AutoMove extends Command
         
         System.out.println(range + " cm");
 
-        if (range < 20)
+        if (range < 120)
             {
             return true;
             } else {
