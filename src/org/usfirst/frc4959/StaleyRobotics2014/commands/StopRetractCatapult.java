@@ -1,27 +1,23 @@
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
-import edu.wpi.first.wpilibj.AnalogChannel;
-import edu.wpi.first.wpilibj.Gyro;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Dustin, Ian Collins, and Saul
+ * @author Lucas Wyland & Ian Collins
  */
 
-public class AutoBrett extends Command
+public class StopRetractCatapult extends Command
     {
 
-    Gyro gyro = RobotMap.gyro;
-    RobotDrive robotDrive = RobotMap.robotDriveTrain;
-    AnalogChannel ultrasonic = RobotMap.ultrasonic;
+    boolean retractorSafety = RobotMap.retractorSafety;
+    DigitalInput limitSwitch = RobotMap.limitSwitch;
     
-    public AutoBrett()
+    public StopRetractCatapult()
         {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.retractor);
         }
 
     // Called just before this Command runs the first time
@@ -32,24 +28,18 @@ public class AutoBrett extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        gyro.reset();
-
-        double angle = gyro.getAngle();
-        
-        robotDrive.arcadeDrive(1, -angle * 0.03);
+        Robot.retractor.stop();
         }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-        Timer.delay(4);
-        return true;
+            return true;
         }
 
     // Called once after isFinished returns true
     protected void end()
         {
-        robotDrive.stopMotor();
         }
 
     // Called when another command which requires one or more of the same

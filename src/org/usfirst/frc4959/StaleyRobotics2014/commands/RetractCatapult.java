@@ -25,28 +25,29 @@ public class RetractCatapult extends Command
     // Called just before this Command runs the first time
     protected void initialize()
         {
-        Robot.retractor.timerSafety();
+        // Robot.retractor.timerSafety();
         }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        if (retractorSafety = true)
-            {
+       // if (true)
             Robot.retractor.retract();
-            }
+            //}
         }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-        if (limitSwitch.get() || Robot.retractor.getSafetyTimer())
-            {
-            Robot.retractor.setSafetyTimer(false);
-            return true;
-            } else {
-            return false;
-            }
+//        if (limitSwitch.get() || Robot.retractor.getSafetyTimer())
+//            {
+//            Robot.retractor.setSafetyTimer(false);
+//            return true;
+//            } else {
+//            return false;
+//            }
+        
+        return limitSwitch.get();
         }
 
     // Called once after isFinished returns true

@@ -5,11 +5,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.Autonomous;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.DecreaseSensitivity;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.DriveWithJoysticks;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapult;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapultSequence;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.IncreaseSensitivity;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.PrimeCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.StopRetractCatapult;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -49,7 +50,6 @@ public class OI
     private final JoystickButton increaseSensitivity;
     private final JoystickButton decreaseSensitivity;
     private final JoystickButton fireCatapult;
-    private final JoystickButton primeCatapult;
     private final JoystickButton retractCatapult;
 
     public OI()
@@ -64,22 +64,22 @@ public class OI
         decreaseSensitivity = new JoystickButton(XboxController, RobotMap.LEFT_BUMPER);
         decreaseSensitivity.whenPressed(new DecreaseSensitivity());
 
-        //We will eventually replace the seperate priming and firing commands
-        //fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
-        //fireCatapult.whenPressed(new FireCatapultSequence());
-        
-        fireCatapult = new JoystickButton(XboxController, RobotMap.B_BUTTON);
-        fireCatapult.whenPressed(new PrimeCatapult());
-        
-        primeCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
-        primeCatapult.whenPressed(new FireCatapult());
+        fireCatapult = new JoystickButton(XboxController, RobotMap.A_BUTTON);
+        fireCatapult.whenPressed(new FireCatapultSequence());
         
         retractCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
         retractCatapult.whenPressed(new RetractCatapult());
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new Autonomous());
-        SmartDashboard.putData("Drive with Joysticks", new DriveWithJoysticks());
+        
+        SmartDashboard.putData("Fire Catapult", new FireCatapult());
+        SmartDashboard.putData("Prime Catapult", new PrimeCatapult());
+        
+        SmartDashboard.putData("Stop Catapult Retractor", new RetractCatapult());
+        SmartDashboard.putData("Stop Catapult Retractor", new StopRetractCatapult());
+        
+        SmartDashboard.putNumber("Ultrasonic Sensor Distance (cm):", RobotMap.ultrasonic.getVoltage() / 0.0049);
     }
 
     //Methods for the axes of XBOX controller

@@ -36,7 +36,7 @@ public class FireCatapultSequence extends Command {
     // Called once after isFinished returns true
     protected void end()
         {
-        Timer.delay(1);
+        Timer.delay(2);
         Robot.shooter.reload();
         }
 
