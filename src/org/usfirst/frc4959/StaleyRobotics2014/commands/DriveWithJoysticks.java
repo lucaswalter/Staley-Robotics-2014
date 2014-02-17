@@ -26,7 +26,7 @@ public class DriveWithJoysticks extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.driveTrain.falconDrive(Robot.oi.getLeftJoystickYAxis(), Robot.oi.getRightJoystick_XAxis());
+        Robot.driveTrain.falconDrive(Robot.oi.getLeftJoystickYAxis(), Robot.oi.getLeftJoystick_XAxis());
         }
 
     // Make this return true when this Command no longer needs to run execute()

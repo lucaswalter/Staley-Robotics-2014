@@ -1,19 +1,19 @@
 package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * Lucas Wyland, Ian Collins, & Dustin
+ * Lucas Wyland, Ian Collins, & Dustin Klein
  */
 
 public class CatapultRetractor extends Subsystem
     {
 
     SpeedController catapultVictor = RobotMap.CatapultVictor;
-    private boolean bHasTimerExpired;
+    DigitalInput limitSwitch = RobotMap.limitSwitch;
 
     public void initDefaultCommand()
         {
@@ -21,27 +21,17 @@ public class CatapultRetractor extends Subsystem
     
     public void retract()
         {
-        catapultVictor.set(1);
-        }
-    
-    public void timerSafety()
-        {
-        Timer.delay(2);
-        bHasTimerExpired = true;
-        }
-    
-    public boolean getSafetyTimer()
-        {
-        return bHasTimerExpired;
-        }
-    
-    public void setSafetyTimer(boolean bHasTimerExpired)
-        {
-        this.bHasTimerExpired = bHasTimerExpired;
+        //Change back to 1 once finished
+        catapultVictor.set(0.4);
         }
     
     public void stop()
         {
         catapultVictor.set(0);
+        }
+    
+    public boolean getLimitSwitch()
+        {
+        return limitSwitch.get();
         }
     }

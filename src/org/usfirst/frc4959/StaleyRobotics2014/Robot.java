@@ -24,7 +24,7 @@ public class Robot extends IterativeRobot
     Command autonomousCommand;
     public static OI oi;
     public static DriveTrain driveTrain;
-    public static CatapultRetractor retractor;
+    public static CatapultRetractor catapultRetractor;
     public static Loader loader;
     public static Shooter shooter;
     
@@ -37,7 +37,7 @@ public class Robot extends IterativeRobot
         RobotMap.init();
 
         driveTrain = new DriveTrain();
-        retractor = new CatapultRetractor();
+        catapultRetractor = new CatapultRetractor();
         loader = new Loader();
         shooter = new Shooter();
 

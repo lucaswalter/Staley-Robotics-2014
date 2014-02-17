@@ -1,9 +1,7 @@
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
-import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
  * @author Lucas Wyland & Ian Collins
@@ -11,24 +9,21 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 public class StopRetractCatapult extends Command
     {
-
-    boolean retractorSafety = RobotMap.retractorSafety;
-    DigitalInput limitSwitch = RobotMap.limitSwitch;
     
     public StopRetractCatapult()
         {
-        requires(Robot.retractor);
+        //requires(Robot.catapultRetractor);
         }
 
     // Called just before this Command runs the first time
     protected void initialize()
         {
+        Robot.catapultRetractor.stop();
         }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        Robot.retractor.stop();
         }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -40,6 +35,7 @@ public class StopRetractCatapult extends Command
     // Called once after isFinished returns true
     protected void end()
         {
+        Robot.catapultRetractor.stop();
         }
 
     // Called when another command which requires one or more of the same

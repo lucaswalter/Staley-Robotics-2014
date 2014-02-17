@@ -56,7 +56,6 @@ public class RobotMap
     public static final int XBOX_BUTTON = 11;
     
     public static boolean retractorSafety;
-    
 
     public static void init()
         {

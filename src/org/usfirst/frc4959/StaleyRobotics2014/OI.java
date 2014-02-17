@@ -2,8 +2,8 @@ package org.usfirst.frc4959.StaleyRobotics2014;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc4959.StaleyRobotics2014.commands.Autonomous;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.DecreaseSensitivity;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapultSequence;
@@ -70,16 +70,18 @@ public class OI
         retractCatapult = new JoystickButton(XboxController, RobotMap.X_BUTTON);
         retractCatapult.whenPressed(new RetractCatapult());
         
-        // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new Autonomous());
+        // SmartDashboard Widgets
+        SmartDashboard.putData(Scheduler.getInstance());
         
         SmartDashboard.putData("Fire Catapult", new FireCatapult());
         SmartDashboard.putData("Prime Catapult", new PrimeCatapult());
-        
-        SmartDashboard.putData("Stop Catapult Retractor", new RetractCatapult());
+        SmartDashboard.putData("Fire Catapult Sequence", new FireCatapultSequence());
+        SmartDashboard.putData("Retract Catapult", new RetractCatapult());
         SmartDashboard.putData("Stop Catapult Retractor", new StopRetractCatapult());
         
         SmartDashboard.putNumber("Ultrasonic Sensor Distance (cm):", RobotMap.ultrasonic.getVoltage() / 0.0049);
+        SmartDashboard.putBoolean("Retractor Arm Limit Switch", RobotMap.limitSwitch.get());
+        SmartDashboard.putBoolean("Retractor Safety", Robot.catapultRetractor.getLimitSwitch());
     }
 
     //Methods for the axes of XBOX controller

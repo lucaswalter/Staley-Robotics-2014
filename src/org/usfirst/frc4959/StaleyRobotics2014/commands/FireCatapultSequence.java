@@ -3,12 +3,16 @@ package org.usfirst.frc4959.StaleyRobotics2014.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
+import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
  * @author Lucas Wyland & Ian Collins
  */
 
 public class FireCatapultSequence extends Command {
+    
+    private static final Timer TIMER = new Timer();
+    public boolean retractorSafety = RobotMap.retractorSafety;
     
     public FireCatapultSequence()
         {
@@ -20,6 +24,7 @@ public class FireCatapultSequence extends Command {
     protected void initialize()
         {
         Robot.shooter.fire();
+        System.out.println("retractorSafety: " + retractorSafety);
         }
 
     // Called repeatedly when this Command is scheduled to run
@@ -36,8 +41,18 @@ public class FireCatapultSequence extends Command {
     // Called once after isFinished returns true
     protected void end()
         {
-        Timer.delay(2);
+        TIMER.start();
+        
+        while(TIMER.get() < 2.0)
+            {
+            // Do Nothing
+            }       
+        
         Robot.shooter.reload();
+        System.out.println("retractorSafety: " + retractorSafety);
+        
+        TIMER.stop();
+        TIMER.reset();
         }
 
     // Called when another command which requires one or more of the same
