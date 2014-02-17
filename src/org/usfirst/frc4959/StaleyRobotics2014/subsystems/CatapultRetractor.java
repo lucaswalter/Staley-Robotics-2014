@@ -21,8 +21,7 @@ public class CatapultRetractor extends Subsystem
     
     public void retract()
         {
-        //Change back to 1 once finished
-        catapultVictor.set(0.4);
+        catapultVictor.set(1);
         }
     
     public void stop()

@@ -7,6 +7,7 @@ package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.RunCompressor;
 
 public class Shooter extends Subsystem
     {
@@ -17,7 +18,7 @@ public class Shooter extends Subsystem
     public void initDefaultCommand()
         {
         // Set the default command for a subsystem here.
-//        setDefaultCommand(new RunCompressor());
+        setDefaultCommand(new RunCompressor());
         }
 
     public void fire()
