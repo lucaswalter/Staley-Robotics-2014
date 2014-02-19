@@ -28,9 +28,4 @@ public class CatapultRetractor extends Subsystem
         {
         catapultVictor.set(0);
         }
-    
-    public boolean getLimitSwitch()
-        {
-        return limitSwitch.get();
-        }
     }

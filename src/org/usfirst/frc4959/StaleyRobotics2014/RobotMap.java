@@ -31,7 +31,8 @@ public class RobotMap
     public static SpeedController loaderVictor;
     public static SpeedController CatapultVictor;
     
-    public static Relay SolenoidSpike;
+    public static Relay FireSolenoidSpike;
+    public static Relay PrimeSolenoidSpike;
     public static Relay compressorSpike;
     
     public static Compressor CompressorSpike;
@@ -55,7 +56,7 @@ public class RobotMap
     public static final int RIGHT_STICK_PRESS = 10;
     public static final int XBOX_BUTTON = 11;
     
-    public static boolean retractorSafety;
+    public static boolean retractorSafety = true;
 
     public static void init()
         {
@@ -65,8 +66,9 @@ public class RobotMap
         loaderVictor = new Victor(1, 3);
         CatapultVictor = new Victor(1, 4);  
         
-        SolenoidSpike = new Relay(1);
-        compressorSpike = new Relay(2);
+        FireSolenoidSpike = new Relay(1);
+        PrimeSolenoidSpike = new Relay(2);
+        compressorSpike = new Relay(3);
         
         gyro = new Gyro(1);
         ultrasonic = new AnalogChannel(2);

@@ -7,7 +7,6 @@ public class Autonomous extends CommandGroup
 
     public Autonomous()
         {
-//        addSequential(new USSR());
         addSequential(new AutoBrett());
         addSequential(new RetractCatapult());
         

@@ -31,10 +31,10 @@ public class RetractCatapult extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-//        if (retractorSafety)
-//            {
+        if (retractorSafety == true)
+            {
             Robot.catapultRetractor.retract();
-//            }
+            }
         }
 
     // Make this return true when this Command no longer needs to run execute()

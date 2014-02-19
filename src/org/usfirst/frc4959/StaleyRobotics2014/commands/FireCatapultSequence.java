@@ -23,8 +23,8 @@ public class FireCatapultSequence extends Command {
     // Called just before this Command runs the first time
     protected void initialize()
         {
+        retractorSafety = false;
         Robot.shooter.fire();
-        System.out.println("retractorSafety: " + retractorSafety);
         }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,8 +48,8 @@ public class FireCatapultSequence extends Command {
             // Do Nothing
             }       
         
-        Robot.shooter.reload();
-        System.out.println("retractorSafety: " + retractorSafety);
+        Robot.shooter.prime();
+        retractorSafety = true;
         
         TIMER.stop();
         TIMER.reset();

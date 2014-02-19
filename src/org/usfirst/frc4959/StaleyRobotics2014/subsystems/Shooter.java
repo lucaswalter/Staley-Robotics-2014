@@ -12,7 +12,9 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.RunCompressor;
 public class Shooter extends Subsystem
     {
 
-    Relay solenoidSpike = RobotMap.SolenoidSpike;
+    Relay fireSolenoidSpike = RobotMap.FireSolenoidSpike;
+    Relay primeSolenoidSpike = RobotMap.PrimeSolenoidSpike;
+    
     boolean retractorSafety = RobotMap.retractorSafety;
 
     public void initDefaultCommand()
@@ -23,13 +25,15 @@ public class Shooter extends Subsystem
 
     public void fire()
         {
-        solenoidSpike.set(Relay.Value.kOn);
+        fireSolenoidSpike.set(Relay.Value.kOn);
+        primeSolenoidSpike.set(Relay.Value.kOff);
         retractorSafety = false;
         }
 
-    public void reload()
+    public void prime()
         {
-        solenoidSpike.set(Relay.Value.kOff);
+        fireSolenoidSpike.set(Relay.Value.kOff);
+        primeSolenoidSpike.set(Relay.Value.kOn);
         retractorSafety = true;
         }
     }
