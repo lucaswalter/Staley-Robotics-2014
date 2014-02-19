@@ -7,7 +7,7 @@ public class Autonomous extends CommandGroup
 
     public Autonomous()
         {
-        addSequential(new AutoBrett());
+        addSequential(new AutoMove());
         addSequential(new RetractCatapult());
         
         // Maybe fire maybe not

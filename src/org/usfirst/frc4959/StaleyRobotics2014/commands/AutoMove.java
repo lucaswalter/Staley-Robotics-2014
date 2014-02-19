@@ -11,7 +11,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
  * @author Dustin, Ian Collins, and Saul
  */
 
-public class AutoBrett extends Command
+public class AutoMove extends Command
     {
 
     Gyro gyro = RobotMap.gyro;
@@ -19,7 +19,7 @@ public class AutoBrett extends Command
     AnalogChannel ultrasonic = RobotMap.ultrasonic;
     private static final Timer TIMER = new Timer();
     
-    public AutoBrett()
+    public AutoMove()
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
