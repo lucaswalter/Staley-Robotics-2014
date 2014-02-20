@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 /**
- * @author Dustin, Ian Collins, and Saul
+ * @author Lucas Wyland, Dustin, Ian Collins, and Saul
  */
 
 public class AutoMove extends Command

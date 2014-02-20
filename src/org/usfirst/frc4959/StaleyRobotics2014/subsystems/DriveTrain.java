@@ -30,7 +30,7 @@ public class DriveTrain extends Subsystem
 
     public void falconDrive(double left, double right)
         {
-        double moveValue = changeSpeed(left, sensitivity(sensitivityLevel));
+        double moveValue = changeSpeed(-left, sensitivity(sensitivityLevel));
         double rotationValue = changeSpeed(-right, sensitivity(sensitivityLevel));
         
         robotDrive.arcadeDrive(moveValue, rotationValue);

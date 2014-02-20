@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 
 /**
- * @author Cameron Hensel
+ * @author Lucas Wyland
  */
 
 public class RobotMap
@@ -60,20 +60,20 @@ public class RobotMap
 
     public static void init()
         {
-
-        driveTrainLeftVictor = new Victor(1, 1);
-        driveTrainRightVictor = new Victor(1, 2);
-        loaderVictor = new Victor(1, 3);
+        
+        driveTrainRightVictor = new Victor(1, 1);
+        driveTrainLeftVictor = new Victor(1, 3);
+        loaderVictor = new Victor(1, 2);
         CatapultVictor = new Victor(1, 4);  
         
-        FireSolenoidSpike = new Relay(1);
-        PrimeSolenoidSpike = new Relay(2);
-        compressorSpike = new Relay(3);
+        FireSolenoidSpike = new Relay(2);
+        PrimeSolenoidSpike = new Relay(3);
+        compressorSpike = new Relay(8);
         
         gyro = new Gyro(1);
         ultrasonic = new AnalogChannel(2);
         
-        limitSwitch = new DigitalInput(1);
+        limitSwitch = new DigitalInput(3);
         pressureSwitch = new DigitalInput(2);
                 
         LiveWindow.addActuator("Drive Train", "Right Victor", (Victor) driveTrainRightVictor);

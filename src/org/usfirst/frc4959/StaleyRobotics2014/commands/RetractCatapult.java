@@ -25,7 +25,7 @@ public class RetractCatapult extends Command
     // Called just before this Command runs the first time
     protected void initialize()
         {
-        System.out.println("Retracting Started");
+        //System.out.println("Retracting Started");
         }
 
     // Called repeatedly when this Command is scheduled to run
@@ -47,12 +47,13 @@ public class RetractCatapult extends Command
     protected void end()
         {
         Robot.catapultRetractor.stop();
-        System.out.println("Retracting Ended");
+        //System.out.println("Retracting Ended");
         }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted()
         {
+        //Robot.catapultRetractor.stop();
         }
     }

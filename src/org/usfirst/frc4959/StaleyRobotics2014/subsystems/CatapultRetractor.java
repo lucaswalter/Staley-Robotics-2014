@@ -22,10 +22,12 @@ public class CatapultRetractor extends Subsystem
     public void retract()
         {
         catapultVictor.set(1);
+        System.out.println("Retracting");
         }
     
     public void stop()
         {
         catapultVictor.set(0);
+        System.out.println("Stopped");
         }
     }
