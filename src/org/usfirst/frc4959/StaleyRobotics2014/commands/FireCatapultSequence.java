@@ -45,7 +45,7 @@ public class FireCatapultSequence extends Command {
         
         while(TIMER.get() < 2.0)
             {
-            // Do Nothing
+            // Does Nothing
             }       
         
         Robot.shooter.prime();

@@ -8,7 +8,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.MoveLoader;
 /**
  * @author Ian Collins
  */
-    
+
 public class Loader extends Subsystem
     {
 
@@ -20,17 +20,17 @@ public class Loader extends Subsystem
         //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new MoveLoader());
         }
-    
+
     //Values may need to be reversed depending on the direction the motor turns
     //A negative value is returned by the right trigger and a positive by the right
     public void moveLoader(double input)
         {
             //Raise Arm
             if (input < 0) {
-                loaderVictor.set(0.3 * input);
+                loaderVictor.set(0.5 * input);
             //Lower Arm    
             } else if (input > 0) {
-                loaderVictor.set(0.2);
+                loaderVictor.set(0.5);
             } else {
                 loaderVictor.set(0.0);
             }    

@@ -48,6 +48,9 @@ public class OI
     // button.whenReleased(new ExampleCommand());
     
     public Joystick XboxController;
+    public Joystick BlackJoystick;
+    public Joystick SilverJoystick;
+    
     private final JoystickButton increaseSensitivity;
     private final JoystickButton decreaseSensitivity;
     private final JoystickButton fireCatapult;
@@ -58,6 +61,8 @@ public class OI
     {
 
         XboxController = new Joystick(1);
+        BlackJoystick = new Joystick (2);
+        SilverJoystick = new Joystick(3);
 
         //These call certain methods when buttons are pressed
         increaseSensitivity = new JoystickButton(XboxController, RobotMap.RIGHT_BUMPER);
@@ -125,5 +130,11 @@ public class OI
     public double getDPad_YAxis()
         {
         return XboxController.getRawAxis(7);
+        }
+    
+    //Get axes for the other two joysticks
+    public double getXAxis_Black()
+        {
+        return BlackJoystick.getY(); 
         }
     }
