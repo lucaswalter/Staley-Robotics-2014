@@ -71,7 +71,7 @@ public class RobotMap
         compressorSpike = new Relay(8);
         
         gyro = new Gyro(1);
-        ultrasonic = new AnalogChannel(2);
+        ultrasonic = new AnalogChannel(3);
         
         limitSwitch = new DigitalInput(3);
         pressureSwitch = new DigitalInput(2);

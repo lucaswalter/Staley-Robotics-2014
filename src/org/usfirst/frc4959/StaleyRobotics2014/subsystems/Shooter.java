@@ -25,15 +25,15 @@ public class Shooter extends Subsystem
 
     public void fire()
         {
-        fireSolenoidSpike.set(Relay.Value.kOn);
-        primeSolenoidSpike.set(Relay.Value.kOff);
+        fireSolenoidSpike.set(Relay.Value.kOff);
+        primeSolenoidSpike.set(Relay.Value.kOn);
         retractorSafety = false;
         }
 
     public void prime()
         {
-        fireSolenoidSpike.set(Relay.Value.kOff);
-        primeSolenoidSpike.set(Relay.Value.kOn);
+        fireSolenoidSpike.set(Relay.Value.kOn);
+        primeSolenoidSpike.set(Relay.Value.kOff);
         retractorSafety = true;
         }
     }

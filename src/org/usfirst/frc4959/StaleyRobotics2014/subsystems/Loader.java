@@ -27,10 +27,10 @@ public class Loader extends Subsystem
         {
             //Raise Arm
             if (input < 0) {
-                loaderVictor.set(0.5 * input);
+                loaderVictor.set(0.35 * input);
             //Lower Arm    
             } else if (input > 0) {
-                loaderVictor.set(0.5);
+                loaderVictor.set(0.35);
             } else {
                 loaderVictor.set(0.0);
             }    

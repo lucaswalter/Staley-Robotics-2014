@@ -12,6 +12,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.PrimeCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.StopCompressor;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.StopRetractCatapult;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.USSR;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -89,8 +90,10 @@ public class OI
         SmartDashboard.putData("Retract Catapult", new RetractCatapult());
         SmartDashboard.putData("Stop Catapult Retractor", new StopRetractCatapult());
         SmartDashboard.putData("Test for Compressor", new StopCompressor());
+        SmartDashboard.putData("Start USSR", new USSR());
         
         SmartDashboard.putNumber("Ultrasonic Sensor Distance (cm):", RobotMap.ultrasonic.getVoltage() / 0.0049);
+        SmartDashboard.getNumber("Gyro Voltage: ", RobotMap.gyro.getAngle());
         SmartDashboard.putBoolean("Retractor Arm Limit Switch", RobotMap.limitSwitch.get());
         SmartDashboard.putBoolean("Retractor Saftey", RobotMap.retractorSafety);
         
@@ -135,6 +138,21 @@ public class OI
     //Get axes for the other two joysticks
     public double getXAxis_Black()
         {
-        return BlackJoystick.getY(); 
+        return BlackJoystick.getX(); 
+        }
+    
+    public double getYAxis_Black()
+        {
+        return BlackJoystick.getY();
+        }
+    
+    public double getXAxis_Silver()
+        {
+        return SilverJoystick.getX();
+        }
+    
+    public double getYAxis_Silver()
+        {
+        return SilverJoystick.getY();
         }
     }

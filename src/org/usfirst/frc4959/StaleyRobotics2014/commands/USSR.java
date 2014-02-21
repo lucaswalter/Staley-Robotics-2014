@@ -1,6 +1,7 @@
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
@@ -12,6 +13,7 @@ public class USSR extends Command
     {
 
     AnalogChannel ultrasonic = RobotMap.ultrasonic;
+    Gyro gyro = RobotMap.gyro;
     
     public USSR()
         {
@@ -22,6 +24,9 @@ public class USSR extends Command
     // Called just before this Command runs the first time
     protected void initialize()
         {
+        //gyro.reset();
+        //ultrasonic.getChannel();
+        //System.out.print(ultrasonic.getChannel());
         }
 
     // Called repeatedly when this Command is scheduled to run
@@ -29,10 +34,12 @@ public class USSR extends Command
         {
         // 4.9 mV/cm
         double voltage = ultrasonic.getVoltage();
-        double range = (voltage / 0.0049);
+        double range = ((voltage / 0.009766) * 2) + 2;
         
-        System.out.println(voltage + " V");
-        System.out.println(range + " cm");
+        //System.out.println(voltage + " V");
+        //System.out.println(gyro.getAngle());
+        System.out.println((int)range + " Centimeters");
+        //System.out.println(voltage);
         }
 
     // Make this return true when this Command no longer needs to run execute()
