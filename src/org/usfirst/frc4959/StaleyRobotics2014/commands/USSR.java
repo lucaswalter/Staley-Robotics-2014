@@ -33,12 +33,12 @@ public class USSR extends Command
     protected void execute()
         {
         // 4.9 mV/cm
-        double voltage = ultrasonic.getVoltage();
-        double range = ((voltage / 0.009766) * 2) + 2;
+        //double voltage = ultrasonic.getVoltage();
+        //double range = ((voltage / 0.009766) * 2) + 2;
         
         //System.out.println(voltage + " V");
-        //System.out.println(gyro.getAngle());
-        System.out.println((int)range + " Centimeters");
+        System.out.println(gyro.getAngle());
+        //System.out.println((int)range + " Centimeters");
         //System.out.println(voltage);
         }
 

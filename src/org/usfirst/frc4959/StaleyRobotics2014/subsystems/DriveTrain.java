@@ -18,9 +18,16 @@ public class DriveTrain extends Subsystem
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
     Gyro gyro = RobotMap.gyro;
-    
+      
     private int sensitivityLevel = 5;
-
+    
+    public DriveTrain()
+        {
+        super();        
+        gyro.setSensitivity(0.007);
+        gyro.reset();
+        }
+    
     public void initDefaultCommand()
         {
         // Set the default command for a subsystem here.
@@ -48,7 +55,7 @@ public class DriveTrain extends Subsystem
             sensitivityLevel--;
             }
         }
-    
+    //TODO: Lower gyro sensitivity
     public double gyroRotationAdjustment(double right)
         {
         if (right < 0.15 || right > -0.15)
