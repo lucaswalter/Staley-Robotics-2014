@@ -14,8 +14,6 @@ public class Shooter extends Subsystem
 
     Relay fireSolenoidSpike = RobotMap.FireSolenoidSpike;
     Relay primeSolenoidSpike = RobotMap.PrimeSolenoidSpike;
-    
-    boolean retractorSafety = RobotMap.retractorSafety;
 
     public void initDefaultCommand()
         {
@@ -27,13 +25,11 @@ public class Shooter extends Subsystem
         {
         fireSolenoidSpike.set(Relay.Value.kOff);
         primeSolenoidSpike.set(Relay.Value.kOn);
-        retractorSafety = false;
         }
 
     public void prime()
         {
         fireSolenoidSpike.set(Relay.Value.kOn);
         primeSolenoidSpike.set(Relay.Value.kOff);
-        retractorSafety = true;
         }
     }

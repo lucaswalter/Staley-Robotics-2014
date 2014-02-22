@@ -17,6 +17,7 @@ public class CatapultRetractor extends Subsystem
 
     public void initDefaultCommand()
         {
+         //setDefaultCommand(new CheckDistance());
         }
     
     public void retract()

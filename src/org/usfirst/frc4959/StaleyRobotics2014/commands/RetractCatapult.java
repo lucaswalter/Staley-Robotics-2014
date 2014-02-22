@@ -11,8 +11,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 
 public class RetractCatapult extends Command
     {
-
-    boolean retractorSafety = RobotMap.retractorSafety;
+    
     DigitalInput limitSwitch = RobotMap.limitSwitch;
     
     public RetractCatapult()

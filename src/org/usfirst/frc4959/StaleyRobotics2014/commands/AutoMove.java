@@ -17,6 +17,7 @@ public class AutoMove extends Command
     Gyro gyro = RobotMap.gyro;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
     AnalogChannel ultrasonic = RobotMap.ultrasonic;
+    
     private static final Timer TIMER = new Timer();
     
     public AutoMove()
@@ -28,50 +29,34 @@ public class AutoMove extends Command
     // Called just before this Command runs the first time
     protected void initialize()
         {
+        TIMER.start();
+        System.out.println("Timer Started");
         }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        //gyro.reset();
-
-        //double angle = gyro.getAngle();
-        
-        //robotDrive.arcadeDrive(1, -angle * 0.03);
-        
-        robotDrive.arcadeDrive(0.7, 0);
+        double angle = gyro.getAngle();
+        robotDrive.tankDrive(0.421, 0.4); //Math.abs(angle) > 5 ? -angle : 0);
+        System.out.println(angle);
         }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-//        // 4.9 mV/cm
-//        double range = ultrasonic.getVoltage() / 0.049;
-//        
-//        System.out.println(range + " cm");
-//
-//        if (range < 120)
-//            {
-//            return true;
-//            } else {
-//            return false;
-//            }
-        
-        TIMER.start();
-        
-        if (TIMER.get() < 1)
+        while(TIMER.get() < 3.3)
             {
-            return true;
-            } else {
             return false;
-        }
+            }   
+        return true;
         }
 
     // Called once after isFinished returns true
     protected void end()
         {
+        System.out.println("AutoMove Finished");
+        robotDrive.tankDrive(-0.5, -0.5);
+        Timer.delay(0.3);
         robotDrive.stopMotor();
-        
         TIMER.stop();
         TIMER.reset();
         }

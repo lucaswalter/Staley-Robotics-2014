@@ -18,15 +18,8 @@ public class DriveTrain extends Subsystem
     SpeedController leftVictor = RobotMap.driveTrainLeftVictor;
     RobotDrive robotDrive = RobotMap.robotDriveTrain;
     Gyro gyro = RobotMap.gyro;
-      
-    private int sensitivityLevel = 5;
-    
-    public DriveTrain()
-        {
-        super();        
-        gyro.setSensitivity(0.007);
-        gyro.reset();
-        }
+  
+    private int sensitivityLevel = 1;
     
     public void initDefaultCommand()
         {
@@ -42,6 +35,7 @@ public class DriveTrain extends Subsystem
         
         robotDrive.arcadeDrive(moveValue, rotationValue);
         }
+   
     
     public void stop()
         {
@@ -53,16 +47,6 @@ public class DriveTrain extends Subsystem
         if (sensitivityLevel > 1) 
             {
             sensitivityLevel--;
-            }
-        }
-    //TODO: Lower gyro sensitivity
-    public double gyroRotationAdjustment(double right)
-        {
-        if (right < 0.15 || right > -0.15)
-            {
-            return gyro.getAngle() * -0.03;
-            } else {
-            return right; 
             }
         }
 
@@ -107,4 +91,5 @@ public class DriveTrain extends Subsystem
         {
         return (sensitivity * input);
         }
+    //IanCollins.is(theBest);
     }

@@ -1,6 +1,7 @@
 package org.usfirst.frc4959.StaleyRobotics2014.subsystems;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.MoveLoader;
@@ -13,6 +14,7 @@ public class Loader extends Subsystem
     {
 
     SpeedController loaderVictor = RobotMap.loaderVictor;
+    private static final Timer TIMER = new Timer();
 
     public void initDefaultCommand()
         {
@@ -27,12 +29,23 @@ public class Loader extends Subsystem
         {
             //Raise Arm
             if (input < 0) {
-                loaderVictor.set(0.35 * input);
+                loaderVictor.set(0.45 * input);
             //Lower Arm    
             } else if (input > 0) {
-                loaderVictor.set(0.35);
+                loaderVictor.set(0.45);
             } else {
                 loaderVictor.set(0.0);
             }    
+        }
+    
+    public void lowerLoader(double time)
+        {
+        TIMER.start();
+        while(TIMER.get() < time)
+            {
+            loaderVictor.set(0.2);
+            }    
+        TIMER.stop();
+        TIMER.reset();
         }
     }

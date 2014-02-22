@@ -30,11 +30,12 @@ public class RobotMap
     public static SpeedController driveTrainLeftVictor;
     public static SpeedController loaderVictor;
     public static SpeedController CatapultVictor;
-    
+            
     public static Relay FireSolenoidSpike;
     public static Relay PrimeSolenoidSpike;
+    public static Relay lightSpike;
     public static Relay compressorSpike;
-    
+      
     public static Compressor CompressorSpike;
     
     public static Gyro gyro;
@@ -54,9 +55,6 @@ public class RobotMap
     public static final int START_BUTTON = 8;
     public static final int LEFT_STICK_PRESS = 9;
     public static final int RIGHT_STICK_PRESS = 10;
-    public static final int XBOX_BUTTON = 11;
-    
-    public static boolean retractorSafety = true;
 
     public static void init()
         {
@@ -68,10 +66,11 @@ public class RobotMap
         
         FireSolenoidSpike = new Relay(2);
         PrimeSolenoidSpike = new Relay(3);
+        lightSpike = new Relay(7);
         compressorSpike = new Relay(8);
-        
+       
         gyro = new Gyro(1);
-        ultrasonic = new AnalogChannel(3);
+        ultrasonic = new AnalogChannel(2);
         
         limitSwitch = new DigitalInput(3);
         pressureSwitch = new DigitalInput(2);
@@ -80,7 +79,7 @@ public class RobotMap
         LiveWindow.addActuator("Drive Train", "Left Victor", (Victor) driveTrainLeftVictor);
 
         robotDriveTrain = new RobotDrive(driveTrainLeftVictor, driveTrainRightVictor);
-
+        
         robotDriveTrain.setSafetyEnabled(false);
         robotDriveTrain.setExpiration(0.1);
         robotDriveTrain.setSensitivity(0.5);

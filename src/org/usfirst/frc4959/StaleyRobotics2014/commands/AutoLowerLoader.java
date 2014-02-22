@@ -1,32 +1,31 @@
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.Robot;
 
 /**
- * @author Lucas Wyland & Ian Collins
+ * @author Lucas Wyland
  */
 
-public class FireCatapultSequence extends Command {
+public class AutoLowerLoader extends Command
+    {
     
-    private static final Timer TIMER = new Timer();
-    
-    public FireCatapultSequence()
+    public AutoLowerLoader()
         {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+        requires(Robot.loader);
         }
-
-    // Called just before this Command runs the first time
+    
+    // Called Just before this Command runs for the first time
     protected void initialize()
         {
-        Robot.shooter.fire();
         }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
+        Robot.loader.lowerLoader(0.2);
         }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -38,17 +37,6 @@ public class FireCatapultSequence extends Command {
     // Called once after isFinished returns true
     protected void end()
         {
-        TIMER.start();
-        
-        while(TIMER.get() < 1.0)
-            {
-            // Does Nothing
-            }       
-        
-        Robot.shooter.prime();
-
-        TIMER.stop();
-        TIMER.reset();
         }
 
     // Called when another command which requires one or more of the same
