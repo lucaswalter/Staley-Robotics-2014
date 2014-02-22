@@ -11,7 +11,10 @@ import org.usfirst.frc4959.StaleyRobotics2014.commands.FireCatapultSequence;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.IncreaseSensitivity;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.PrimeCatapult;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.RetractCatapult;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.StopCompressor;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.StopRetractCatapult;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.TurnLightsOff;
+import org.usfirst.frc4959.StaleyRobotics2014.commands.TurnLightsOn;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -88,8 +91,10 @@ public class OI
         SmartDashboard.putData("Fire Catapult Sequence", new FireCatapultSequence());
         SmartDashboard.putData("Retract Catapult", new RetractCatapult());
         SmartDashboard.putData("Stop Catapult Retractor", new StopRetractCatapult());
-        //SmartDashboard.putData("Test for Compressor", new StopCompressor());
+        SmartDashboard.putData("Test for Compressor", new StopCompressor());
         SmartDashboard.putData("Distance Checker", new CheckDistance());
+        SmartDashboard.putData("Turn Lights On", new TurnLightsOn());
+        SmartDashboard.putData("Turn Lights Off", new TurnLightsOff());
         
         SmartDashboard.putNumber("Ultrasonic Sensor Distance (cm):", RobotMap.ultrasonic.getVoltage() / 0.0049);
         SmartDashboard.getNumber("Gyro Voltage: ", RobotMap.gyro.getAngle());

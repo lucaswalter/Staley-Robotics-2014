@@ -6,7 +6,6 @@
 
 package org.usfirst.frc4959.StaleyRobotics2014.commands;
 
-import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
@@ -14,12 +13,17 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 /**
  * @author Lucas Wyland
  */
-public class CheckDistance extends Command
+
+public class TurnLightsOn extends Command
     {
     
-    AnalogChannel ultrasonic = RobotMap.ultrasonic;
     Relay lightSpike = RobotMap.lightSpike;
     
+    public TurnLightsOn()
+        {
+        // Use requires() here to declare subsystem dependencies
+        }
+
     // Called just before this Command runs the first time
     protected void initialize()
         {
@@ -28,28 +32,13 @@ public class CheckDistance extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
         {
-        // 4.9 mV/cm
-        double voltage = ultrasonic.getVoltage();
-        int range = (int)(((voltage / 0.009766) * 2) + 2);
-        
-        System.out.println(range);
         lightSpike.set(Relay.Value.kOn);
-        lightSpike.set(Relay.Value.kOff);
-        //Accurate range 4-7, 11-13.5
-        //14 Feet Ideal Range
-//        if((range < 213 && range > 123) || (range < 411 && range > 335))
-//            {
-//            lightSpike.set(Relay.Value.kOn);
-//            } else
-//            {
-//            lightSpike.set(Relay.Value.kOff);
-//            }
-            }
+        }
 
-    // Make this return true when this Command no longer needs to run execute()
+    // Make this return true when this Commrand no longer needs to run execute()
     protected boolean isFinished()
         {
-        return false;
+        return true;
         }
 
     // Called once after isFinished returns true
@@ -62,5 +51,4 @@ public class CheckDistance extends Command
     protected void interrupted()
         {
         }
-    
     }
