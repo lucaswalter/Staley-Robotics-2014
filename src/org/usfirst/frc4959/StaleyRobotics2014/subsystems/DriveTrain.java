@@ -8,7 +8,7 @@ import org.usfirst.frc4959.StaleyRobotics2014.RobotMap;
 import org.usfirst.frc4959.StaleyRobotics2014.commands.DriveWithJoysticks;
 
 /**
- * Lucas Wyland & Ian Collins
+ * @author Lucas Wyland & Ian Collins
  */
 
 public class DriveTrain extends Subsystem

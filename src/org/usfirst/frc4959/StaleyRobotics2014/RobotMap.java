@@ -70,7 +70,7 @@ public class RobotMap
         compressorSpike = new Relay(8);
        
         gyro = new Gyro(1);
-        ultrasonic = new AnalogChannel(2);
+        ultrasonic = new AnalogChannel(3);
         
         limitSwitch = new DigitalInput(3);
         pressureSwitch = new DigitalInput(2);
@@ -80,7 +80,7 @@ public class RobotMap
 
         robotDriveTrain = new RobotDrive(driveTrainLeftVictor, driveTrainRightVictor);
         
-        robotDriveTrain.setSafetyEnabled(false);
+        robotDriveTrain.setSafetyEnabled(true);
         robotDriveTrain.setExpiration(0.1);
         robotDriveTrain.setSensitivity(0.5);
         robotDriveTrain.setMaxOutput(1.0);

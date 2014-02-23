@@ -30,21 +30,21 @@ public class CheckDistance extends Command
         {
         // 4.9 mV/cm
         double voltage = ultrasonic.getVoltage();
-        int range = (int)(((voltage / 0.009766) * 2) + 2);
+        double range = (((voltage / 0.009766) * 2) + 2);
         
         System.out.println(range);
-        lightSpike.set(Relay.Value.kOn);
-        lightSpike.set(Relay.Value.kOff);
+        //lightSpike.set(Relay.Value.kOn);
+        //lightSpike.set(Relay.Value.kOff);
         //Accurate range 4-7, 11-13.5
         //14 Feet Ideal Range
-//        if((range < 213 && range > 123) || (range < 411 && range > 335))
-//            {
-//            lightSpike.set(Relay.Value.kOn);
-//            } else
-//            {
-//            lightSpike.set(Relay.Value.kOff);
-//            }
+        if((range < 213 && range > 123) || (range < 411 && range > 335))
+            {
+            lightSpike.set(Relay.Value.kOn);
+            } else
+            {
+            lightSpike.set(Relay.Value.kOff);
             }
+        }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()

@@ -43,7 +43,7 @@ public class AutoMove extends Command
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
         {
-        while(TIMER.get() < 2.65)
+        while(TIMER.get() < 3.85)
             {
             return false;
             }   

@@ -7,11 +7,11 @@ public class Autonomous extends CommandGroup
 
     public Autonomous()
         {
-        //addSequential(new PrimeCatapult());
-        //addSequential(new RetractCatapult());
-        //addSequential(new AutoLowerLoader());
-        addSequential(new AutoMove());               
-        //addSequential(new FireCatapultSequence());
-        //Move Again
+        addSequential(new PrimeCatapult());
+        addSequential(new RetractCatapult());
+        addSequential(new AutoLowerLoader());
+        addSequential(new AutoMove());
+        addSequential(new FireCatapultSequence());
+        //addSequential(new ShortAutoMove());
         }
 }
